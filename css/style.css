@@ -19,12 +19,17 @@ body {
 
 /*  COMPONENTS */
 .container {
-    width: 85%;
+    width: 80%;
     height: 90vh;
     background: #f4efef;
     border: 2px solid var(--shadow);
     border-radius: 20px;
     margin-block: 0rem 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     position: absolute;
     top: 50%;
@@ -34,33 +39,160 @@ body {
     transition: width 0.2s linear;
 }
 
-/* Large screen design */
-@media screen and (min-width:1120px) {
-    .container {
-        width: 30rem;
-        height: 34rem;
-    }
+.deck-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-block: 0.5rem ;
 }
 
-/* Small screen design */
-@media screen and (min-width:1024px) {
+.deck-container:last-child {
+    margin-block: 0.5rem;
+}
+
+.deck-setup {
+    display: flex;
+}
+.deck-h3{
+    font-weight: bold;
+}
+
+.card{
+    width: 10rem;
+    height: 13rem;
+    border: 2px solid var(--shadow);
+    border-radius: 10px;
+    margin: 0.25rem 0.85rem;
+    box-shadow: 0px 0px 5px 2px #111;
+}
+.deckCount{
+    font-size: 3.5rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player1 .deckCount {
+    background: green;
+}
+.player2 .deckCount {
+    background: blue;
+}
+
+.score-container {
+    display: flex;
+}
+
+.scoreDecider{
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.scoreBoard,
+.playerScore{
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scoreBoard {
+    width: 7rem;
+    border: 2px solid var(--shadow);
+    border-radius: 10px;
+    margin: 0 1.5rem;
+}
+
+.playerScore{
+    width: 5rem;
+    border: 2px solid var(--shadow);
+    border-radius: 10px;
+}
+
+
+/* Large screen design */
+/* @media screen and (min-width:1120px) {
     .container {
         width: 36rem;
-        height: 28rem;
+        height: 34rem;
     }
+    .deck-container {
+        width: 75%;
+        height: 90vh;
+    }
+    
+} */
+
+/* Desktop design */
+@media screen and (max-width:1024px) {
+    .container {
+        width: 75%;
+        height: 95%;
+    }
+    .deck-container {
+        width: 80%;
+        height: 90vh;
+        margin-block: 0.5rem ;
+    }
+    .deck-setup{
+        height: 12rem;
+    }
+    .card{
+        height: 95%;
+    }
+    
 }
 
 /* Tablet design */
-@media screen and (min-width:768px) {
-    .container {
-        width: 80%;
-        height: 95%;
+@media screen and (max-width:768px) {  
+    .deck-container {
+        margin-block: 1rem;
+    }
+    .deck-setup{
+        height: 10.5rem;
+    }
+    .card{
+        height: 100%;
+    }
+    .scoreDecider{
+        height: 2.25rem;
+    }
+
+}
+
+/* Mobile design */
+@media screen and (max-width:480px) {
+    .container{
+        height: 95vh;
+    }
+    .deck-container {
+        width: 90%;
+        margin-block: 1.75rem;
+    }
+    .deck-setup{
+        width: 100%;
+        height: 10rem;
+        display: flex;
+        align-items: center;
+    }
+    .card{
+        height: 98%;
+        margin: 0.5rem;
+    }
+    .deck-setup > *:first-child{
+        width: 40%; 
+        height: 40%;
+     }
+     .score-container{
+        width: 90%;
+        margin-block: 0.5rem 1rem;
+    }
+    .scoreDecider{
+        width: 95%;
+        height: 2.25rem;
+        margin: 0 auto;
     }
 }
-/* Mobile design */
-/* @media screen and (min-width:480px) {
-    .container {
-        width: 85%;
-        height: 38rem;
-    }
-} */
