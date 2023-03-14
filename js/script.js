@@ -169,7 +169,7 @@ function refreshGame(){
 }
 
 
-function declareScore(p1Value, p2Value){
+let declareScore = (p1Value, p2Value) => {
     let convertedValues = {
         "A" : 14,
         "K" : 13,
@@ -195,8 +195,7 @@ function declareScore(p1Value, p2Value){
     } else {  
         p2TotalScore.textContent++;
         scoreBoard.textContent = `P2 WINS!!`;
-    }
-    
+    }   
 }
 
 function displayResults(){
