@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CARD GAME WAR</title>
+    <!-- Zelda Fonts -->
+    <link href="https://fonts.cdnfonts.com/css/the-wild-breath-of-zelda" rel="stylesheet">
     <!-- Font Awesome link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- css link -->
@@ -12,48 +14,99 @@
 </head>
 <body>
 
-    <!-- Main section start -->
     <div class="container">
-        <!-- player 1 start -->
-        <div class="deck-container player1">
-            <div class="deck-h3">Player 1</div>
-           <div class="deck-setup">
-            <div class="card deckCount">
-                26
-            </div>
-            <div class="card cardFace"></div>
-           </div>
+
+
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close">&times;</span>
+             
+            </div>      
         </div>
-        <!-- player 1 end -->
-        
-        <!-- Score start -->
-        <div class="score-container">
-           <div class="scoreDecider">
-            <div id="p1-score" class="playerScore p1-score">
-                P1: 0
+        <!-- Modal content End -->
+
+
+
+
+        <!-- Start Page start -->
+        <div class="startPage">
+            <div class="gameTitle">
+                CLASSIC CARD GAME <span> WAR! </span>
             </div>
-            <div class="scoreBoard"></div>
-            <div id="p2-score" class="playerScore p2-score">
-                P2: 0
-            </div>
-           </div>
+
+            <button id="btnStart" class="btn">Start Game</button>
         </div>
-        <!-- Score end -->
-        
-        <!-- player 2 start -->
-        <div class="deck-container player2">
-            <div class="deck-h3">Player 2</div>
-            <div class="deck-setup">
-                <div class="card deckCount">
-                    26
+    <!-- Start Page end -->
+
+        <!-- Main section start -->
+        <div class="container-main mainContent">
+            <div class="exitGame">
+                <button id="exit">Exit</button>
+            </div>
+
+            <!-- player 1 start -->
+            <div class="deck-container player1">
+                <div class="deck-h3">Player 1</div>
+                <div class="deck-setup">
+                    <div class="card deckCount" id="p1deckLength">
+                        26
+                    </div>
+                    <div class="card cardFace">
+                        <div class="faceBox">     
+                            <div class="player1FaceValue"> </div>
+                            <div class="p1faceEndSuit" id="player1FaceSuit"> </div>
+                        </div>
+                        <div class="faceBox player1FaceValue">  </div>
+                        <div class="faceBox">
+                            <div class="p1faceEndSuit" id="player1FaceSuit"> </div>
+                            <div class="player1FaceValue"> </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="card cardFace"></div>
             </div>
+            <!-- player 1 end -->
+            
+            <!-- Score start -->
+            <div class="score-container">
+            <div class="scoreDecider">
+                <div id="p1-score" class="playerScore p1-score">
+                    P1: <span id="p1TotalScore"> 0 </span>
+                </div>
+                <div class="scoreBoard"> </div>
+                <div id="p2-score" class="playerScore p2-score">
+                    P2: <span id="p2TotalScore"> 0 </span>
+                </div>
+            </div>
+            </div>
+            <!-- Score end -->
+            
+            <!-- player 2 start -->
+            <div class="deck-container player2">
+                <div class="deck-h3">Player 2</div>
+                <div class="deck-setup">
+                    <div class="card deckCount" id="p2deckLength">
+                        26
+                    </div>
+                    <div class="card cardFace">
+                        <div class="faceBox">     
+                            <div class="player2FaceValue"> </div>
+                            <div class="p2faceEndSuit" id="player2FaceSuit"> </div>
+                        </div>
+                        <div class="faceBox player2FaceValue">  </div>
+                        <div class="faceBox">
+                            <div class="p2faceEndSuit" id="player2FaceSuit"> </div>
+                            <div class="player2FaceValue"> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- player 2 end -->
         </div>
-        <!-- player 2 end -->
+        <!-- Main section end -->
     </div>
-    <!-- Main section end -->
 
     <script type="module" src="js/deck.js"></script>
+    <script type="module" src="js/script.js"></script>
 </body>
 </html>

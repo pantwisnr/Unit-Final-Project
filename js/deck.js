@@ -1,67 +1,64 @@
 // Creating a deck class
-
 const SUITS = ["♠️","♣️","♦️","♥️"];
 const VALUES = ["A","2","3","4","5","6","7","8","9","10","J","Q","K"];
 
+
 // A deck class containing 52 cards
 export class Deck{
-    constructor(cards = freshCards(SUITS, VALUES)) {
+    constructor(cards = freshCards()) {
         this.cards = cards;
     }
 
+    getCardLength(){
+        return this.cards.length
+    }
+    
     //  shufle cards in deck
     shuffle(){
-        // let shuffledCards = "";
         let getCards = this.cards;
-        let shuffledCards = "";
-        for(let i=0; i < getCards.length; i++){
+        for(let i=0; i < getCards.length; i++){ 
             let newIndex = Math.floor(Math.random() * getCards.length);
             let oldTemp = getCards[i]
             let newTemp = getCards[newIndex]
             getCards[i] = newTemp
             getCards[newIndex] = oldTemp
-            
-            //  shuffledCards = getCards.slice(getCards[newIndex], 1)
-             // console.log("old index", shuffledCards)
-            // shuffledCards.push(getCards[newTemp]);
-            // let cardAtNew = getCards[newposition]
-            // getCards[newposition] = card;
-            // getCards[oldIndex] = cardAtNew
-            // shuffledCards.push(getCards[oldIndex]);
-
-            // console.log("old index", shuffledCards)
-            // console.log("new", newposition)
-            // console.log( "card", getCards[oldIndex])
-            // console.log("cardatNew", getCards[newposition])
+         
         }
-        return {"shuffled cards" : getCards};
+        return getCards;
     }
-}
+
+    // deal(){}
+} 
 
 // class to get a card form deck class
-class CARD {
-    consturctor(suits, values){
+export class CARD {
+    constructor(values, suits){
         this.suits = suits;
         this.values = values;  
     }
+
+    getColor(){
+        return this.suits === "♠️" || this.suits === "♣️" ? "black": "red";
+        // return this.values ;
+    }
 }
 
+export class Player {
+    constructor(hand){
+        this.hand = hand;
+    }
+}
+
+
 // new fresh cards created from the suits and values array
-function freshCards() {
+export function freshCards() {
     let cardsArray = [];
     for(let i in SUITS){
         for(let j in VALUES){
-            cardsArray.push([VALUES[j], SUITS[i]]);
+            let card = new CARD(VALUES[j], SUITS[i])
+            cardsArray.push(card);
         }
     }
     return cardsArray;
 }
 
-// console.log(freshCards(SUITS, VALUES)); 
-let deck  = new Deck();
-console.log(deck)
-
-// let shuffled = deck.shuffle()
-let shuffled = new Deck().shuffle()
-
-console.log("shuffled =", shuffled); 
