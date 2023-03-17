@@ -129,9 +129,6 @@ body {
     cursor: pointer;
 }
 
-/* .btn:hover{
-    animation: slideUp 1.7s ease infinite; 
-} */
 @keyframes slideUp {
     0%   {
         opacity: 1;
@@ -330,7 +327,7 @@ body {
 }
 
   
-  /* The Close Button */
+/* The Close Button */
 .close {
     color: #aaa;
     float: right;
@@ -372,21 +369,6 @@ body {
     margin-top: 0.75rem;
     font-weight: bold;
 }
-
-
-
-/* Large screen design */
-/* @media screen and (min-width:1120px) {
-    .container {
-        width: 36rem;
-        height: 34rem;
-    }
-    .deck-container {
-        width: 75%;
-        height: 90vh;
-    }
-    
-} */
 
 /* Desktop design */
 @media screen and (max-width:1024px) {

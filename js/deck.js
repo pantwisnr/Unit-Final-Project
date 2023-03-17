@@ -5,7 +5,7 @@ const VALUES = ["A","2","3","4","5","6","7","8","9","10","J","Q","K"];
 
 // A deck class containing 52 cards
 export class Deck{
-    constructor(cards = freshCards()) {
+    constructor(cards = createNewDeck()) {
         this.cards = cards;
     }
 
@@ -39,7 +39,6 @@ export class CARD {
 
     getColor(){
         return this.suits === "♠️" || this.suits === "♣️" ? "black": "red";
-        // return this.values ;
     }
 }
 
@@ -51,7 +50,7 @@ export class Player {
 
 
 // new fresh cards created from the suits and values array
-export function freshCards() {
+export function createNewDeck() {
     let cardsArray = [];
     for(let i in SUITS){
         for(let j in VALUES){

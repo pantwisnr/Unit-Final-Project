@@ -1,0 +1,17 @@
+{
+  "name": "unit-final-project",
+  "version": "1.0.0",
+  "description": "Unit 6 Final Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+   "type": "module",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0"
+  }
+  
+}
